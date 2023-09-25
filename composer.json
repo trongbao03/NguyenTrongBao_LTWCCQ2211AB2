@@ -1,0 +1,12 @@
+{
+    "name": "trongbao/shop-thoi-trang",
+    "description": "Tao web ban hang - Thay Loi Day",
+    "autoload": {
+        "psr-4": {
+            "Src\\":"application/"
+        }
+    },
+    "require": {
+        "illuminate/database": "^10.24"
+    }
+}

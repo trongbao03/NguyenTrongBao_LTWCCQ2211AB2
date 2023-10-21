@@ -1,12 +1,23 @@
 {
     "name": "trongbao/shop-thoi-trang",
-    "description": "Tao web ban hang - Thay Loi Day",
+    "description": "Tao web ban hang - Nam hoc 2023-2024",
+    "authors":[
+        {
+            "name":"Nguyễn Trọng Bảo",
+            "email": "nguyentrongbaogame@gmail.com"
+        }
+    ],
     "autoload": {
         "psr-4": {
-            "Src\\":"application/"
-        }
+            "App\\":"app/"
+        },
+        "files": [
+            "./app/Route.php",
+            "./config/database.php"
+        ]
     },
     "require": {
-        "illuminate/database": "^10.24"
+        "illuminate/database": "^10.28",
+        "illuminate/events": "^10.28"
     }
 }

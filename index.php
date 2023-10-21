@@ -1,4 +1,3 @@
 <?php 
-require_once 'vendor/autoload.php';
-use Src\Route; 
+require_once 'vendor/autoload.php'; 
 Route::route_site();

@@ -153,18 +153,74 @@
             "install-path": "../doctrine/inflector"
         },
         {
-            "name": "illuminate/collections",
-            "version": "v10.24.0",
-            "version_normalized": "10.24.0.0",
+            "name": "illuminate/bus",
+            "version": "v10.26.2",
+            "version_normalized": "10.26.2.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/illuminate/collections.git",
-                "reference": "939a975daa8a5f77974ffa6a24067f5e947683f4"
+                "url": "https://github.com/illuminate/bus.git",
+                "reference": "aba48b9b7b9266a62b8e5ece47919533b3d49de7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/collections/zipball/939a975daa8a5f77974ffa6a24067f5e947683f4",
-                "reference": "939a975daa8a5f77974ffa6a24067f5e947683f4",
+                "url": "https://api.github.com/repos/illuminate/bus/zipball/aba48b9b7b9266a62b8e5ece47919533b3d49de7",
+                "reference": "aba48b9b7b9266a62b8e5ece47919533b3d49de7",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/collections": "^10.0",
+                "illuminate/contracts": "^10.0",
+                "illuminate/pipeline": "^10.0",
+                "illuminate/support": "^10.0",
+                "php": "^8.1"
+            },
+            "suggest": {
+                "illuminate/queue": "Required to use closures when chaining jobs (^7.0)."
+            },
+            "time": "2023-08-27T20:33:50+00:00",
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "10.x-dev"
+                }
+            },
+            "installation-source": "source",
+            "autoload": {
+                "psr-4": {
+                    "Illuminate\\Bus\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Taylor Otwell",
+                    "email": "taylor@laravel.com"
+                }
+            ],
+            "description": "The Illuminate Bus package.",
+            "homepage": "https://laravel.com",
+            "support": {
+                "issues": "https://github.com/laravel/framework/issues",
+                "source": "https://github.com/laravel/framework"
+            },
+            "install-path": "../illuminate/bus"
+        },
+        {
+            "name": "illuminate/collections",
+            "version": "v10.26.2",
+            "version_normalized": "10.26.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/illuminate/collections.git",
+                "reference": "133f59956c8002448b07a3ff5f4352f3b3de5614"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/illuminate/collections/zipball/133f59956c8002448b07a3ff5f4352f3b3de5614",
+                "reference": "133f59956c8002448b07a3ff5f4352f3b3de5614",
                 "shasum": ""
             },
             "require": {
@@ -176,7 +232,7 @@
             "suggest": {
                 "symfony/var-dumper": "Required to use the dump method (^6.2)."
             },
-            "time": "2023-09-18T18:32:31+00:00",
+            "time": "2023-09-19T22:43:12+00:00",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -212,8 +268,8 @@
         },
         {
             "name": "illuminate/conditionable",
-            "version": "v10.24.0",
-            "version_normalized": "10.24.0.0",
+            "version": "v10.26.2",
+            "version_normalized": "10.26.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/conditionable.git",
@@ -261,8 +317,8 @@
         },
         {
             "name": "illuminate/container",
-            "version": "v10.24.0",
-            "version_normalized": "10.24.0.0",
+            "version": "v10.26.2",
+            "version_normalized": "10.26.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/container.git",
@@ -315,8 +371,8 @@
         },
         {
             "name": "illuminate/contracts",
-            "version": "v10.24.0",
-            "version_normalized": "10.24.0.0",
+            "version": "v10.26.2",
+            "version_normalized": "10.26.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/contracts.git",
@@ -366,17 +422,17 @@
         },
         {
             "name": "illuminate/database",
-            "version": "v10.24.0",
-            "version_normalized": "10.24.0.0",
+            "version": "v10.28.0",
+            "version_normalized": "10.28.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/database.git",
-                "reference": "dbf15dca652e25f2bd9607e78dc527464edbec1d"
+                "reference": "7b82234921a80bfc7a8fe67ff3ba3043c384fc04"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/database/zipball/dbf15dca652e25f2bd9607e78dc527464edbec1d",
-                "reference": "dbf15dca652e25f2bd9607e78dc527464edbec1d",
+                "url": "https://api.github.com/repos/illuminate/database/zipball/7b82234921a80bfc7a8fe67ff3ba3043c384fc04",
+                "reference": "7b82234921a80bfc7a8fe67ff3ba3043c384fc04",
                 "shasum": ""
             },
             "require": {
@@ -399,7 +455,7 @@
                 "illuminate/pagination": "Required to paginate the result set (^10.0).",
                 "symfony/finder": "Required to use Eloquent model factories (^6.2)."
             },
-            "time": "2023-09-19T14:11:01+00:00",
+            "time": "2023-10-09T18:36:56+00:00",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -437,9 +493,67 @@
             "install-path": "../illuminate/database"
         },
         {
+            "name": "illuminate/events",
+            "version": "v10.28.0",
+            "version_normalized": "10.28.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/illuminate/events.git",
+                "reference": "e8cbfa31e1ada8d178ffcd7a5e26e101ec280c59"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/illuminate/events/zipball/e8cbfa31e1ada8d178ffcd7a5e26e101ec280c59",
+                "reference": "e8cbfa31e1ada8d178ffcd7a5e26e101ec280c59",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/bus": "^10.0",
+                "illuminate/collections": "^10.0",
+                "illuminate/container": "^10.0",
+                "illuminate/contracts": "^10.0",
+                "illuminate/macroable": "^10.0",
+                "illuminate/support": "^10.0",
+                "php": "^8.1"
+            },
+            "time": "2023-08-11T15:02:04+00:00",
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "10.x-dev"
+                }
+            },
+            "installation-source": "source",
+            "autoload": {
+                "files": [
+                    "functions.php"
+                ],
+                "psr-4": {
+                    "Illuminate\\Events\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Taylor Otwell",
+                    "email": "taylor@laravel.com"
+                }
+            ],
+            "description": "The Illuminate Events package.",
+            "homepage": "https://laravel.com",
+            "support": {
+                "issues": "https://github.com/laravel/framework/issues",
+                "source": "https://github.com/laravel/framework"
+            },
+            "install-path": "../illuminate/events"
+        },
+        {
             "name": "illuminate/macroable",
-            "version": "v10.24.0",
-            "version_normalized": "10.24.0.0",
+            "version": "v10.26.2",
+            "version_normalized": "10.26.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/macroable.git",
@@ -486,18 +600,69 @@
             "install-path": "../illuminate/macroable"
         },
         {
-            "name": "illuminate/support",
-            "version": "v10.24.0",
-            "version_normalized": "10.24.0.0",
+            "name": "illuminate/pipeline",
+            "version": "v10.26.2",
+            "version_normalized": "10.26.2.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/illuminate/support.git",
-                "reference": "f3ac48a059e3f1a0cb72c926f83a77af77d7a7f3"
+                "url": "https://github.com/illuminate/pipeline.git",
+                "reference": "f2119ae9a26e420bf0ed9d5e7e7aa4548547e7b1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/support/zipball/f3ac48a059e3f1a0cb72c926f83a77af77d7a7f3",
-                "reference": "f3ac48a059e3f1a0cb72c926f83a77af77d7a7f3",
+                "url": "https://api.github.com/repos/illuminate/pipeline/zipball/f2119ae9a26e420bf0ed9d5e7e7aa4548547e7b1",
+                "reference": "f2119ae9a26e420bf0ed9d5e7e7aa4548547e7b1",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/contracts": "^10.0",
+                "illuminate/support": "^10.0",
+                "php": "^8.1"
+            },
+            "time": "2023-03-03T15:55:44+00:00",
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "10.x-dev"
+                }
+            },
+            "installation-source": "source",
+            "autoload": {
+                "psr-4": {
+                    "Illuminate\\Pipeline\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Taylor Otwell",
+                    "email": "taylor@laravel.com"
+                }
+            ],
+            "description": "The Illuminate Pipeline package.",
+            "homepage": "https://laravel.com",
+            "support": {
+                "issues": "https://github.com/laravel/framework/issues",
+                "source": "https://github.com/laravel/framework"
+            },
+            "install-path": "../illuminate/pipeline"
+        },
+        {
+            "name": "illuminate/support",
+            "version": "v10.26.2",
+            "version_normalized": "10.26.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/illuminate/support.git",
+                "reference": "c7cf96f64ae6766a85fcd17f46afcae5a6a88744"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/illuminate/support/zipball/c7cf96f64ae6766a85fcd17f46afcae5a6a88744",
+                "reference": "c7cf96f64ae6766a85fcd17f46afcae5a6a88744",
                 "shasum": ""
             },
             "require": {
@@ -525,7 +690,7 @@
                 "symfony/var-dumper": "Required to use the dd function (^6.2).",
                 "vlucas/phpdotenv": "Required to use the Env class and env helper (^5.4.1)."
             },
-            "time": "2023-09-19T14:13:21+00:00",
+            "time": "2023-09-21T20:37:39+00:00",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -561,17 +726,17 @@
         },
         {
             "name": "nesbot/carbon",
-            "version": "2.70.0",
-            "version_normalized": "2.70.0.0",
+            "version": "2.71.0",
+            "version_normalized": "2.71.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/briannesbitt/Carbon.git",
-                "reference": "d3298b38ea8612e5f77d38d1a99438e42f70341d"
+                "reference": "98276233188583f2ff845a0f992a235472d9466a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/d3298b38ea8612e5f77d38d1a99438e42f70341d",
-                "reference": "d3298b38ea8612e5f77d38d1a99438e42f70341d",
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/98276233188583f2ff845a0f992a235472d9466a",
+                "reference": "98276233188583f2ff845a0f992a235472d9466a",
                 "shasum": ""
             },
             "require": {
@@ -598,7 +763,7 @@
                 "phpunit/phpunit": "^7.5.20 || ^8.5.26 || ^9.5.20",
                 "squizlabs/php_codesniffer": "^3.4"
             },
-            "time": "2023-09-07T16:43:50+00:00",
+            "time": "2023-09-25T11:31:05+00:00",
             "bin": [
                 "bin/carbon"
             ],

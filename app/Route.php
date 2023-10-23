@@ -20,7 +20,7 @@ class Route
                 }
             }
         } else {
-            $path = "views/fontend/home.php";
+            $path = "./views/frontend/home.php";
         }
 
         if (file_exists($path)) {

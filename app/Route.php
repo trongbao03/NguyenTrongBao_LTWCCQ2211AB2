@@ -4,7 +4,7 @@ class Route
 {
     public static function route_site()
     {
-        $path = "views/fontend/";
+        $path = "views/frontend/";
 
         if (isset($_REQUEST["option"])) {
             $option = $_REQUEST["option"];
@@ -26,7 +26,7 @@ class Route
         if (file_exists($path)) {
             require_once $path;
         } else {
-            echo "Trang không tồn tại";
+            echo $path;
         }
     }
 

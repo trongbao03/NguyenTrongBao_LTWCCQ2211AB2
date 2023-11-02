@@ -1,29 +1,58 @@
-<?php 
+<?php
+
 use App\Models\Product;
-$list_product = Product::where([['status','=',1],['category_id','=',$cat->id]])
-->orderBy('created_at','DESC')
-->limit(8)
-->get();
+use App\Models\Category;
+
+$list_id = [$cat->id];
+foreach ($list_id as $id) {
+   $list_category1 = Category::where([['parent_id', '=', $id], ['status', '=', 1]])
+      ->orderBy('sort_order', 'ASC')
+      ->select('id')
+      ->get();
+
+   if (count($list_category1) > 0) {
+      foreach ($list_category1 as $cat1) {
+         $list_id[] = $cat1->id;
+
+         $list_category2 = Category::where([['parent_id', '=', $cat1->id], ['status', '=', 1]])
+            ->orderBy('sort_order', 'ASC')
+            ->select('id')
+            ->get();
+
+         if (count($list_category2) > 0) {
+            foreach ($list_category2 as $cat2) {
+               $list_id[] = $cat2->id;
+            }
+         }
+      }
+   }
+}
+
+$list_product = Product::where('status', '=', 1)
+   ->whereIn('category_id', $list_id)
+   ->orderBy('created_at', 'DESC')
+   ->limit(8)
+   ->get();
 ?>
-<div class="row product-list">
-   <?php foreach($list_product as $product):?>
-      <div class="col-6 col-md-3 mb-4">
-            <div class="product-item border">
-                  <div class="product-item-image">
-                     <a href="product_detail.html">
-                     <img src="/Website/NguyenTrongBao_CCQ2211AB/public/images/product/thoi-trang-nam-1.jpg" class="img-fluid" alt=""
-                     id="img1">
-                  <img class="img-fluid" src="/Website/NguyenTrongBao_CCQ2211AB/public/images/product/thoi-trang-nam-2.jpg" alt=""id="img2">
-                  </a>
-               </div>
-               <h2 class="product-item-name text-main text-center fs-5 py-1">
-                  <a href="product_detail.html">Thời trang nam 1</a>
-               </h2>
-               <h3 class="product-item-price fs-6 p-2 d-flex">
-                     <div class="flex-fill"><del>200.000đ</del></div>
-                  <div class="flex-fill text-end text-main">190.000đ</div>
-               </h3>
+
+<?php if (count($list_product) > 0) : ?>
+   <div class="product-category mt-3">
+      <div class="row">
+         <div class="col-md-3">
+            <div class="category-title bg-main">
+               <h1 class="fs-5 py-3 text-center text-uppercase"><?= $cat->name; ?></h1>
+               <img class="img-fluid d-none d-md-block" src="/Website/NguyenTrongBao_CCQ2211AB/public/images/category/<?= $cat->image; ?>" alt="<?= $cat->image; ?>">
             </div>
+         </div>
+         <div class="col-md-9">
+            <div class="row product-list">
+               <?php foreach ($list_product as $product) : ?>
+                  <div class="col-6 col-md-3 mb-4">
+                     <?php require 'views/frontend/product-item.php'; ?>
+                  </div>
+               <?php endforeach; ?>
+            </div>
+         </div>
       </div>
-   <?php endforeach;?>
-</div>    
+   </div>
+<?php endif; ?>

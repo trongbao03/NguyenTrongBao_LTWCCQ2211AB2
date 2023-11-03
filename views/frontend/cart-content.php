@@ -42,7 +42,7 @@ $listcart = Cart::cartContent();
                         <tr>
                             <td class="text-center align-middle"><?= $stt; ?></td>
                             <td>
-                                <img class="img-fluid" src="/public/images/product/<?= $cart['image']; ?>" alt="<?= $cart['image']; ?>">
+                                <img class="img-fluid" src="public/images/product/<?= $cart['image']; ?>" alt="<?= $cart['image']; ?>">
                             </td>
                             <td class="align-middle"><?= $cart['name']; ?></td>
                             <td class="text-center align-middle"><?= number_format($cart['price']); ?></td>

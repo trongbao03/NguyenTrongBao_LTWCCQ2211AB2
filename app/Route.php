@@ -55,9 +55,9 @@ class Route
                 $path .= 'page/page_create.php';
             } else if ($_REQUEST['option'] === 'order_details') {
                 $path .= 'order/order_details.php';
-            } else if ($_REQUEST['option'] === 'addorder') { //! dòng mới thêm
+            } else if ($_REQUEST['option'] === 'addorder') {
                 $path .= 'order/addorder.php';
-            } else if ($_REQUEST['option'] === 'addcategory') { //!* dòng mới thêm !
+            } else if ($_REQUEST['option'] === 'addcategory') { 
                 $path .= 'category/addcategory.php';
             } else {
                 $path .= $_REQUEST['option'] . '/';

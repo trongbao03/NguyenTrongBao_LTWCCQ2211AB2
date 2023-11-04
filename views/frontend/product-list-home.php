@@ -36,7 +36,7 @@ $list_product = Product::where('status', '=', 1)
 ?>
 
 <?php if (count($list_product) > 0) : ?>
-   <div class="product-category mt-3">
+   <div class="product-category mt-3 ">
       <div class="row">
          <div class="col-md-3">
             <div class="category-title bg-main">

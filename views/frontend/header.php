@@ -7,7 +7,7 @@
    <title><?= $title ?? "No title"; ?></title>
    <link rel="stylesheet" href="/Website/NguyenTrongBao_CCQ2211AB/public/bootstrap/css/bootstrap.min.css">
    <link rel="stylesheet" href="/Website/NguyenTrongBao_CCQ2211AB/public/fontawesome/css/all.min.css">
-   <link rel="stylesheet" href="/Website/NguyenTrongBao_CCQ2211AB/public/css/frontend.css">
+   <link rel="stylesheet" href="/Website/NguyenTrongBao_CCQ2211AB/public/css/frontend1.css">
    <script src="public/bootstrap/js/bootstrap.bundle.min.js"></script>
    <script src="public/jquery/jquery-3.7.0.min.js"></script>
 
@@ -18,8 +18,8 @@
       <div class="container">
          <div class="row">
             <div class="col-6 col-sm-6 col-md-2 py-1">
-               <a href="index.html">
-                  <img src="/Website/NguyenTrongBao_CCQ2211AB/public/images/logo.png" class="img-fluid" alt="Logo">
+               <a href="index.php">
+                  <img src="/Website/NguyenTrongBao_CCQ2211AB/public/images/new_logo1.png" class="img-fluid" alt="Logo">
                </a>
             </div>
             <div class="col-12 col-sm-9 d-none d-md-block col-md-5 py-3">
@@ -46,12 +46,9 @@
                         <a class="nav-link" href="register.html">Đăng ký</a>
                      </li>
                      <li class="nav-item">
-                        <a class="nav-link" href="profile.html">Hồ Diên Lợi</a>
+                        <a class="nav-link" href="profile.html">Nguyễn Trọng Bảo</a>
                      </li>
                   </ul>
-               </div>
-               <div class="fs-6 py-2">
-                  ĐỔI TRẢ HÀNG HOẶC HOÀN TIỀN <span class="text-main">TRONG 3 NGÀY</span>
                </div>
             </div>
             <div class="col-6 col-sm-6 col-md-1 text-end py-4 py-md-2">

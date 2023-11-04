@@ -25,7 +25,7 @@ $list = Category::where('status','!=',0)
          <section class="content">
             <div class="card">
                <div class="card-header text-right">
-               <a href="index.php?option=category&cat=trash"class="btn btn-danger btn-xs"><i class="fas fa-trash-alt"></i> Thùng rác</a> |
+               <a href="index.php?option=category&cat=trash"class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i> Thùng rác</a> |
                   <button class="btn btn-sm btn-success">
                      <i class="fa fa-save" aria-hidden="true"></i>
                      Lưu

@@ -7,13 +7,86 @@
    <title><?= $title ?? "No title"; ?></title>
    <link rel="stylesheet" href="/Website/NguyenTrongBao_CCQ2211AB/public/bootstrap/css/bootstrap.min.css">
    <link rel="stylesheet" href="/Website/NguyenTrongBao_CCQ2211AB/public/fontawesome/css/all.min.css">
-   <link rel="stylesheet" href="/Website/NguyenTrongBao_CCQ2211AB/public/css/frontend1.css">
+   <link rel="stylesheet" href="/Website/NguyenTrongBao_CCQ2211AB/public/css/frontend.css">
    <script src="public/bootstrap/js/bootstrap.bundle.min.js"></script>
    <script src="public/jquery/jquery-3.7.0.min.js"></script>
+   <script>
+      $(document).ready(function() {
+         const notificationOverlay = $('#notificationOverlay');
+         const closeNotification = $('#closeNotification');
+         const notification = $('.notification');
 
+         function showNotification() {
+            notificationOverlay.fadeIn();
+            notification.fadeIn();
+         }
+
+         function hideNotification() {
+            // Thêm hiệu ứng động khi ẩn thông báo
+            notification.animate({
+               scale: 0.9,
+               opacity: 0
+            }, 500, function() {
+               // Gọi khi hiệu ứng hoàn tất
+               notificationOverlay.fadeOut();
+               notification.hide();
+            });
+         }
+
+         $('.notification').on('click', function(event) {
+            event.preventDefault();
+            showNotification();
+         });
+
+         closeNotification.on('click', hideNotification);
+
+         // Thêm hiệu ứng động cho thông báo khi hiển thị
+         notification.animate({
+            scale: 1.1,
+            opacity: 1
+         }, 500);
+      });
+   </script>
+   <script>
+      $(document).ready(function() {
+         const notification = $('.notification');
+
+         function startShake() {
+            notification.addClass('notification-shake');
+         }
+
+         function stopShake() {
+            notification.removeClass('notification-shake');
+         }
+
+         setInterval(function() {
+            startShake();
+            setTimeout(stopShake, 500);
+         }, 1000); // Chạy mỗi giây
+
+         // Thêm hiệu ứng động khi hiển thị
+         notification.animate({
+            scale: 1.1,
+            opacity: 1
+         }, 500);
+      });
+   </script>
 </head>
 
 <body>
+   <div id="socialMediaButtons" class="social-media-buttons">
+      <a href="https://www.facebook.com/profile.php?id=100065070340039" class="social-button facebook"><i class="fa-brands fa-facebook"></i></a>
+      <a href="#" class="social-button twitter"><i class="fa-brands fa-twitter"></i></i></a>
+      <a href="#" class="social-button instagram"><i class="fa-brands fa-instagram"></i></a>
+      <a href="#" class="social-button notification"><i class="fa-solid fa-bell"></i></a>
+   </div>
+   <div class="notification-overlay" id="notificationOverlay">
+      <div class="notification-content">
+         <h2>Thông báo</h2>
+         <p>Nội dung thông báo sẽ ở đây.</p>
+         <button id="closeNotification">Đóng</button>
+      </div>
+   </div>
    <section class="hdl-header">
       <div class="container">
          <div class="row">
@@ -39,15 +112,23 @@
                            0987654321
                         </a>
                      </li>
-                     <li class="nav-item">
-                        <a class="nav-link" href="login.html">Đăng nhập</a>
-                     </li>
-                     <li class="nav-item">
-                        <a class="nav-link" href="register.html">Đăng ký</a>
-                     </li>
-                     <li class="nav-item">
-                        <a class="nav-link" href="profile.html">Nguyễn Trọng Bảo</a>
-                     </li>
+                     <?php if (isset($_SESSION['name'])) : ?>
+                        <li class="nav-item">
+                           <a class="nav-link" href="profile.html">
+                              <?php echo $_SESSION['name']; ?>
+                           </a>
+                        </li>
+                        <li class="nav-item">
+                           <a class="nav-link" href="index.php?option=customer&logout=true">Đăng xuất</a>
+                        </li>
+                     <?php else : ?>
+                        <li class="nav-item">
+                           <a class="nav-link" href="index.php?option=customer&login=true">Đăng nhập</a>
+                        </li>
+                        <li class="nav-item">
+                           <a class="nav-link" href="index.php?option=customer&register=true">Đăng ký</a>
+                        </li>
+                     <?php endif; ?>
                   </ul>
                </div>
             </div>

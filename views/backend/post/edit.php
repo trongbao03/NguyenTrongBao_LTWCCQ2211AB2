@@ -11,14 +11,11 @@ if (isset($_REQUEST['id'])) {
    if ($post) {
       $error = "";
 
-      if (isset($_POST['CAPNHAT'])) {
-         // Validate tiêu đề bài viết
+      if (isset($_POST['CAPNHAT'])) { 
          $title = isset($_POST['title']) ? $_POST['title'] : '';
          if ($title == '') {
             $error = 'Tiêu đề bài viết không được để trống';
          }
-
-         // Nếu không có lỗi, cập nhật bài viết
          if ($error == "") {
             $post->title = $title;
             $post->slug = isset($_POST['slug']) ? $_POST['slug'] : Str::slug($title);

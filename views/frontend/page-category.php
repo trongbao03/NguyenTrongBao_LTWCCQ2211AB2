@@ -40,8 +40,12 @@ $page = Post::where([['slug','=',$slug],['type','=','page'],['status','=',1]])->
                </ul>
             </div>
             <div class="col-md-9 order-1 order-md-2">
-               <h1 class="fs-2 text-main"><?=$page->title;?></h1>
-               <p><?=$page->detail;?>
+               <?php if ($page): ?>
+                  <h1 class="fs-2 text-main"><?=$page->title;?></h1>
+                  <p><?=$page->detail;?></p>
+               <?php else: ?>
+                  <p>Trang không tồn tại.</p>
+               <?php endif; ?>
             </div>
          </div>
       </div>

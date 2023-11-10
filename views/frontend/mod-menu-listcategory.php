@@ -7,7 +7,7 @@ $mod_menu_listcategory = Category::where([['parent_id','=',0],['status','=',1]])
 ?>
 <div class="dropdown list-category ">
     <strong class="dropdown-toggle w-100 " data-bs-toggle="dropdown" aria-expanded="false">
-            Danh mục sản phẩm
+            Danh mục sản phẩm 
     </strong>
     <ul class="dropdown-menu w-100">
         <?php foreach($mod_menu_listcategory as $rowcat):?>

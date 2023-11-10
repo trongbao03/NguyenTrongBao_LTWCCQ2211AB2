@@ -3,31 +3,30 @@
 use App\Models\Product;
 
 
-// Kiểm tra xem 'id' đã được truyền vào từ yêu cầu
+
 if (isset($_REQUEST['id'])) {
    $id = $_REQUEST['id'];
 
-   // Lấy sản phẩm từ cơ sở dữ liệu bằng ID
+  
    $product = Product::find($id);
 
    if ($product) {
-      $error = ""; // Thiết lập biến lỗi ban đầu
+      $error = ""; 
 
-      // Kiểm tra nếu nút "Cập nhật" được bấm
+      
       if (isset($_POST['CAPNHAT'])) {
-         // Lấy các giá trị từ biểu mẫu
+         
          $name = $_POST['name'];
          $slug = $_POST['slug'];
          $description = $_POST['description'];
          $status = $_POST['status'];
 
-         // Cập nhật các trường dữ liệu của sản phẩm
+        
          $product->name = $name;
          $product->slug = $slug;
          $product->description = $description;
          $product->status = $status;
 
-         // Lưu các thay đổi vào cơ sở dữ liệu
          $product->save();
          $error = 'Cập nhật thành công !!!';
          echo '<script>setTimeout(function() { window.location.href = "index.php?option=product"; },1000);</script>';

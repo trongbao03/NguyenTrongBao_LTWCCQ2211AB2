@@ -3,36 +3,34 @@
 use App\Models\User;
 
 if (isset($_POST["LOGIN"])) {
-   $username = $_POST['username'];
-   $password = sha1($_POST['password']);
+    $username = $_POST['username'];
+    $password = sha1($_POST['password']);
 
-   $args = [
-      ['password', '=', $password],
-      ['status', '=', 1],
-   ];
+    $args = [
+        ['status', '=', 1],
+    ];
 
-   if (filter_var($username, FILTER_VALIDATE_EMAIL)) {
-      $args[] = ['email', '=', $username];
-   } else {
+    if (filter_var($username, FILTER_VALIDATE_EMAIL)) {
+        $args[] = ['email', '=', $username];
+    } else {
+        $args[] = ['username', '=', $username];
+    }
 
-      $args[] = ['username', '=', $username];
-   }
+    $user = User::where($args)->first();
 
-
-   $user = User::where($args)->first();
-
-   if ($user !== null && $user->password === $password) {
-
-      $_SESSION['iscustom'] = $username;
-      $_SESSION['user_id'] = $user->id;
-      $_SESSION['name'] = $user->name;
-      session_start();
-      header('location:index.php');
-   } else {
-      $error = "Đăng nhập thất bại. Vui lòng kiểm tra tên người dùng hoặc mật khẩu.";
-   }
+    if ($user !== null && password_verify($_POST['password'], $user->password)) {
+        session_start();
+        $_SESSION['iscustom'] = $username;
+        $_SESSION['user_id'] = $user->id;
+        $_SESSION['name'] = $user->name;
+        header('location:index.php');
+        exit(); // Dừng thực thi mã ngay sau khi chuyển hướng
+    } else {
+        $error = "Đăng nhập thất bại. Vui lòng kiểm tra tên người dùng hoặc mật khẩu.";
+    }
 }
 ?>
+
 <?php require_once "views/frontend/header.php"; ?>
 <section class="bg-light">
    <div class="container">

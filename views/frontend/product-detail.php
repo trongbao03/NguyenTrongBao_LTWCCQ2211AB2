@@ -97,7 +97,7 @@ $list_other = Product::where([['status', '=', 1], ['id', '!=', $pro->id]])
                <input type="number" value="1" name="qty" id="qty" class="form-control" style="width:200px">
             </div>
             <div class="mb-3">
-               <a class="btn btn-main" href="checkout.html">Mua ngay</a>
+               <a class="btn btn-main" href="index.php?option=checkout">Mua ngay</a>
                <button class="btn btn-main" onclick="addcart(<?= $pro->id; ?>)">
                   <i class="fa-solid fa-bag-shopping" aria-hidden="true"></i> Thêm vào giỏ hàng
                </button>

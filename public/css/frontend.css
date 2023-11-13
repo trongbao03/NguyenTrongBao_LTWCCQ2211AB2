@@ -103,6 +103,9 @@
    }
 }
 
+.bell i{
+   color: yellow;
+}
 /*body*/
 body{
    background-image: url("../images/background-web.jpg");

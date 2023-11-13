@@ -5,9 +5,15 @@ use App\Models\User;
 use App\Models\Order;
 use App\Models\Orderdetail;
 
-$customer = User::where([['status', '=', 1], ['id', '=', $_SESSION['user_id']]])->first();
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+$customer = null;
+if (isset($_SESSION['user_id'])) {
+    $customer = User::where([['status', '=', 1], ['id', '=', $_SESSION['user_id']]])->first();
+}
 $listcart = Cart::cartContent();
-if (isset($_POST['XACNHAN']) && count($listcart) > 0) {
+if (isset($_POST['XACNHAN']) && count($listcart) > 0 && $customer) {
    $order = new Order();
    $order->user_id = $_SESSION['user_id'];
    $order->deliveryaddress = $customer->name;
@@ -29,6 +35,7 @@ if (isset($_POST['XACNHAN']) && count($listcart) > 0) {
       }
       unset($_SESSION['cart']);
       header("location:index.php");
+      exit(); 
    }
 }
 

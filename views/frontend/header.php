@@ -4,7 +4,7 @@
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title><?= $title ?? "No title"; ?></title>
+   <title><?= $title ?? "TRONG BAO STORE"; ?></title>
    <link rel="stylesheet" href="/Website/NguyenTrongBao_CCQ2211AB/public/bootstrap/css/bootstrap.min.css">
    <link rel="stylesheet" href="/Website/NguyenTrongBao_CCQ2211AB/public/fontawesome/css/all.min.css">
    <link rel="stylesheet" href="/Website/NguyenTrongBao_CCQ2211AB/public/css/frontend.css">
@@ -114,7 +114,7 @@
                      </li>
                      <?php if (isset($_SESSION['name'])) : ?>
                         <li class="nav-item">
-                           <a class="nav-link" href="profile.html">
+                           <a class="nav-link" href="index.php?option=customer&profile=true">
                               <?php echo $_SESSION['name']; ?>
                            </a>
                         </li>
@@ -153,6 +153,24 @@
             </div>
             <div class="col-12 col-md-9">
                <?php require_once 'views/frontend/mod-mainmenu.php'; ?>
+            </div>
+         </div>
+      </div>
+      <div class="container">
+         <div class="row">
+            <div class="col-1 text-end">
+               <div class="bell">
+                  <i class="fa-solid fa-bell fa-shake"></i>
+               </div>
+            </div>
+            <div class="col-11">
+               <div class="marquee">
+                  <marquee direction="left" scrollamount="12" ;>
+                     <div style="white-space: nowrap;display: flex;align-items: center;">
+                        <p>Giảm giá các mặt hàng đồ jean lên đến 20% tại TRONGBAOSHOP - GenZ Fashion New </p>
+                     </div>
+                  </marquee>
+               </div>
             </div>
          </div>
       </div>

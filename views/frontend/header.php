@@ -107,9 +107,9 @@
                <div class="call-login--register border-bottom">
                   <ul class="nav nav-fills py-0 my-0">
                      <li class="nav-item">
-                        <a class="nav-link" href="login.html">
+                        <a class="nav-link" href="index.php?option=contact">
                            <i class="fa fa-phone-square" aria-hidden="true"></i>
-                           0987654321
+                           0933804508
                         </a>
                      </li>
                      <?php if (isset($_SESSION['name'])) : ?>

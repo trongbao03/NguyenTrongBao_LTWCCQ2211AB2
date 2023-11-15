@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\User;
+
 $error = "";
 if (isset($_POST["REGISTER"])) {
    $name = $_POST['name'];
@@ -67,9 +68,14 @@ if (isset($_POST["REGISTER"])) {
    <form action="index.php?option=customer&register=true" method="post" name="registercustomer">
       <div class="container">
          <h1 class="fs-2 text-main text-center">ĐĂNG KÝ TÀI KHOẢN</h1>
-         <h6 class="<?php echo isset($successMessage) ? 'btn-success' : 'btn-danger'; ?>">
-            <?php echo $successMessage ?? $error; ?>
-         </h6>
+         <?php
+         if (!empty($error)) {
+            echo '<div class="alert alert-danger">' . $error . '</div>';
+         }
+         if (!empty($successMessage)) {
+            echo '<div class="alert alert-success">' . $successMessage . '<a href="index.php?option=customer&login=true">Đăng nhập</a></div>';
+         }
+         ?>
          <div class="row">
             <div class="col-md-6">
                <div class="mb-3">

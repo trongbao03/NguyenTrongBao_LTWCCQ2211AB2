@@ -31,7 +31,7 @@ if (isset($_SESSION['user_id'])) {
             <ul class="list-group mb-3 list-category">
                <li class="list-group-item bg-main py-3">Thông tin tài khoản</li>
                <li class="list-group-item">
-                  <a href="profile.html">Thông tin tài khoản</a>
+                  <a href="index.php?option=customer&profile=true">Thông tin tài khoản</a>
                </li>
                <li class="list-group-item">
                   <a href="profile.html">Quản lý đơn hàng</a>
@@ -53,7 +53,7 @@ if (isset($_SESSION['user_id'])) {
                </tr>
                <tr>
                   <td style="width:20%;">Tên đăng nhập</td>
-                  <td><?= $customer->username; ?> <a href="">Đổi mật khẩu</a> </td>
+                  <td><?= $customer->username; ?> <a href="index.php?option=changepassword">Đổi mật khẩu</a> </td>
                </tr>
                <tr>
                   <td style="width:20%;">Email</td>
